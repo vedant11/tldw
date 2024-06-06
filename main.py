@@ -11,14 +11,18 @@ load_dotenv()  # Load environment variables from .env file
 parser=argparse.ArgumentParser()
 parser.add_argument("-v","--vid", help="Add video ID", required=True)
 parser.add_argument("-s","--summary_type", help="Summary type freetext, e.g. short/medium/long/technical/SFW/etc.", default="succinct")
+parser.add_argument("-d", "--debug", help="Print debug information", action="store_true")
 args=vars(parser.parse_args())
 
 # args
 video_id = args['vid']
 summary_desc = args['summary_type']
+debug = args['debug']
 
-# assert
+# assert and process arg
 assert video_id != '', 'Please provide a video_id'
+if debug:
+    litellm.set_verbose = True
 
 # Get summary
 raw_transcript = list(YouTubeTranscriptApi.get_transcript(video_id))
