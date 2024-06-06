@@ -17,7 +17,7 @@ with open('transcript.txt', 'w') as f:
     f.write(trancript)
 
 res = litellm.completion(
-    model=os.getenv('MODEL', 'llama3'),
+    model=os.getenv('MODEL', 'ollama/llama3'),
     messages=[
         {"role":"system","content":"help the user to summarize this transcript"},
         {"role":"user","content":trancript}
