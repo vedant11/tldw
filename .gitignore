@@ -2,9 +2,13 @@
 .venv
 **/__pycache__/
 *pyc
+.env
+
 
 # Ignore the generated files
 transcript.txt
+summary.txt
+
 
 # example files
 # **/assets/*.static
