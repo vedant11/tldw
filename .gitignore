@@ -1,0 +1,10 @@
+# python
+.venv
+**/__pycache__/
+*pyc
+
+# Ignore the generated files
+transcript.txt
+
+# example files
+# **/assets/*.static
