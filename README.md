@@ -8,11 +8,12 @@ credits: https://github.com/jdepoix/youtube-transcript-api
 
 ```sh
 pip install -r requirements.txt
-ollama serve
+make install fetch_llama3
 ```
 
 ## usage
 
 ```sh
+make serve_ollama
 python3 main.py --help
 ```
